@@ -190,6 +190,7 @@
         .card[data-categories*="frontend"] .card-header { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
         .card[data-categories*="backend"] .card-header { background: linear-gradient(135deg, #dc2626, #ef4444); }
         .card[data-categories*="engine"] .card-header { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+        .card[data-categories*="iot"] .card-header { background: linear-gradient(135deg, #0d9488, #14b8a6); }
         
         .card-header h3 {
             font-size: 1.4rem;
@@ -406,6 +407,20 @@
             flex-wrap: wrap;
             margin-top: 1rem;
         }
+
+        /* Стили для изображений ресурсов */
+        .resource-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -463,15 +478,14 @@
                 </div>
                 <div class="card" data-categories="engine">
                     <div class="card-header">
-                        <h3>CryEngine</h3>
-                        <p>Движок для фотореалистичной графики</p>
+                        <h3>Cocos2d</h3>
+                        <p>Движок для 2D игр</p>
                     </div>
                     <div class="card-body">
-                        <p>Мощный движок с продвинутыми возможностями рендеринга и физики.</p>
+                        <p>Популярный фреймворк для создания 2D игр и интерактивного контента.</p>
                         <div class="installer-links">
-                            <a href="https://www.cryengine.com/download" class="btn btn-success" target="_blank">Скачать</a>
-                            <a href="https://docs.cryengine.com" class="btn" target="_blank">Документация</a>
-                            <a href="https://www.cryengine.com/marketplace" class="btn btn-warning" target="_blank">Marketplace</a>
+                            <a href="https://www.cocos.com/en/cocos2dx" class="btn btn-success" target="_blank">Скачать</a>
+                            <a href="https://docs.cocos.com" class="btn" target="_blank">Документация</a>
                         </div>
                     </div>
                 </div>
@@ -551,6 +565,7 @@
                         <div class="installer-links">
                             <a href="https://react.dev" class="btn" target="_blank">Сайт</a>
                             <a href="https://react.dev/learn" class="btn btn-success" target="_blank">Документация</a>
+                            <a href="https://metanit.com/web/react/" class="btn btn-warning" target="_blank">Metanit</a>
                         </div>
                     </div>
                 </div>
@@ -564,6 +579,7 @@
                         <div class="installer-links">
                             <a href="https://vuejs.org" class="btn" target="_blank">Сайт</a>
                             <a href="https://vuejs.org/guide" class="btn btn-success" target="_blank">Документация</a>
+                            <a href="https://metanit.com/web/vue/" class="btn btn-warning" target="_blank">Metanit</a>
                         </div>
                     </div>
                 </div>
@@ -580,16 +596,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" data-categories="frontend">
+                <div class="card" data-categories="backend">
                     <div class="card-header">
-                        <h3>Svelte</h3>
-                        <p>Компилируемый фреймворк</p>
+                        <h3>Node.js</h3>
+                        <p>Серверная платформа</p>
                     </div>
                     <div class="card-body">
-                        <p>Инновационный фреймворк, который компилируется в оптимизированный JavaScript.</p>
+                        <p>Среда выполнения JavaScript на стороне сервера для создания масштабируемых приложений.</p>
                         <div class="installer-links">
-                            <a href="https://svelte.dev" class="btn" target="_blank">Сайт</a>
-                            <a href="https://svelte.dev/docs" class="btn btn-success" target="_blank">Документация</a>
+                            <a href="https://nodejs.org" class="btn" target="_blank">Сайт</a>
+                            <a href="https://nodejs.org/en/docs/" class="btn btn-success" target="_blank">Документация</a>
                         </div>
                     </div>
                 </div>
@@ -619,32 +635,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" data-categories="backend">
-                    <div class="card-header">
-                        <h3>Express.js</h3>
-                        <p>Node.js фреймворк</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Минималистичный и гибкий фреймворк для создания веб-приложений на Node.js.</p>
-                        <div class="installer-links">
-                            <a href="https://expressjs.com" class="btn" target="_blank">Сайт</a>
-                            <a href="https://expressjs.com/en/guide/routing.html" class="btn btn-success" target="_blank">Документация</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="backend">
-                    <div class="card-header">
-                        <h3>Laravel</h3>
-                        <p>PHP фреймворк</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Элегантный фреймворк с выразительным синтаксисом для веб-разработки на PHP.</p>
-                        <div class="installer-links">
-                            <a href="https://laravel.com" class="btn" target="_blank">Сайт</a>
-                            <a href="https://laravel.com/docs" class="btn btn-success" target="_blank">Документация</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -653,64 +643,40 @@
             <h2 class="section-title">🎓 Обучающие платформы</h2>
             <div class="resources-grid">
                 <div class="resource-card">
+                    <div class="resource-image">📚</div>
                     <h4>Codecademy</h4>
                     <p>Учитесь программировать в интерактивном режиме бесплатно. Практические упражнения и проекты.</p>
                     <a href="https://www.codecademy.com" class="btn" target="_blank">Перейти</a>
                 </div>
                 <div class="resource-card">
+                    <div class="resource-image">🆓</div>
                     <h4>Free Code Camp</h4>
                     <p>Учитесь программировать, участвуйте в проектах, зарабатывайте сертификаты онлайн.</p>
                     <a href="https://www.freecodecamp.org" class="btn" target="_blank">Перейти</a>
                 </div>
                 <div class="resource-card">
+                    <div class="resource-image">🎯</div>
                     <h4>Udacity</h4>
                     <p>Получите нанодиплом, признаваемый крупнейшими IT компаниями.</p>
                     <a href="https://www.udacity.com" class="btn" target="_blank">Перейти</a>
                 </div>
                 <div class="resource-card">
+                    <div class="resource-image">📺</div>
                     <h4>Platzi</h4>
                     <p>Стримы в прямом эфире по маркетингу, дизайну, программированию.</p>
                     <a href="https://platzi.com" class="btn" target="_blank">Перейти</a>
                 </div>
                 <div class="resource-card">
+                    <div class="resource-image">🎮</div>
                     <h4>CodeCombat</h4>
                     <p>Изучайте компьютерные науки, играя в настоящую игру.</p>
                     <a href="https://codecombat.com" class="btn" target="_blank">Перейти</a>
                 </div>
                 <div class="resource-card">
+                    <div class="resource-image">📅</div>
                     <h4>One Month</h4>
                     <p>Научитесь программировать и создавать веб-приложения за один месяц.</p>
                     <a href="https://onemonth.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="resource-card">
-                    <h4>Khan Academy</h4>
-                    <p>Бесплатные курсы по программированию, математике и компьютерным наукам.</p>
-                    <a href="https://www.khanacademy.org/computing" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="resource-card">
-                    <h4>Scrimba</h4>
-                    <p>Интерактивные курсы с возможностью редактирования кода прямо в браузере.</p>
-                    <a href="https://scrimba.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="resource-card">
-                    <h4>edX</h4>
-                    <p>Курсы от ведущих университетов мира по программированию и компьютерным наукам.</p>
-                    <a href="https://www.edx.org/learn/computer-programming" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="resource-card">
-                    <h4>Coursera</h4>
-                    <p>Профессиональные курсы и специализации от университетов и компаний.</p>
-                    <a href="https://www.coursera.org/courses?query=programming" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="resource-card">
-                    <h4>Udemy</h4>
-                    <p>Огромная библиотека курсов по всем языкам программирования и технологиям.</p>
-                    <a href="https://www.udemy.com/courses/development/" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="resource-card">
-                    <h4>LinkedIn Learning</h4>
-                    <p>Профессиональные курсы по программированию и разработке программного обеспечения.</p>
-                    <a href="https://www.linkedin.com/learning/topics/development" class="btn" target="_blank">Перейти</a>
                 </div>
             </div>
         </div>
@@ -735,22 +701,6 @@
                     <h5>Exercism</h5>
                     <a href="https://exercism.org" class="btn" target="_blank">Перейти</a>
                 </div>
-                <div class="platform-card">
-                    <h5>Codingame</h5>
-                    <a href="https://www.codingame.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="platform-card">
-                    <h5>CodeChef</h5>
-                    <a href="https://www.codechef.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="platform-card">
-                    <h5>Topcoder</h5>
-                    <a href="https://www.topcoder.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="platform-card">
-                    <h5>Codeforces</h5>
-                    <a href="https://codeforces.com" class="btn" target="_blank">Перейти</a>
-                </div>
             </div>
         </div>
 
@@ -762,7 +712,7 @@
             </div>
             
             <div class="counter">
-                Найдено: <span id="cardCount">85</span> языков и технологий
+                Найдено: <span id="cardCount">150</span> языков и технологий
             </div>
             
             <div class="nav-tabs">
@@ -793,7 +743,7 @@
     <script>
         // Данные для карточек
         const languages = [
-            // Основные популярные языки (уже были)
+            // Существующие языки
             {
                 name: "Python",
                 category: "Универсальный язык",
@@ -830,7 +780,7 @@
                 categories: ["game", "system", "web"]
             },
 
-            // Новые языки из списка
+            // Новые языки из вашего списка
             {
                 name: "Agda",
                 category: "Функциональный язык с зависимыми типами",
@@ -844,6 +794,13 @@
                 description: "Brainfuck — эзотерический язык программирования с минималистичным набором команд.",
                 link: "https://esolangs.org/wiki/Brainfuck",
                 categories: ["system"]
+            },
+            {
+                name: "C",
+                category: "Системный язык программирования",
+                description: "C — компилируемый язык программирования для системного программирования.",
+                link: "https://en.cppreference.com/w/c/language",
+                categories: ["system", "embedded"]
             },
             {
                 name: "Clojure",
@@ -895,6 +852,13 @@
                 categories: ["system"]
             },
             {
+                name: "Dart",
+                category: "Язык для Flutter",
+                description: "Dart — язык программирования от Google для создания кроссплатформенных приложений.",
+                link: "https://dart.dev/guides",
+                categories: ["mobile", "web"]
+            },
+            {
                 name: "Elixir",
                 category: "Функциональный язык",
                 description: "Elixir — динамический функциональный язык для создания масштабируемых приложений.",
@@ -942,6 +906,13 @@
                 description: "F# — функциональный язык программирования для платформы .NET.",
                 link: "https://fsharp.org/",
                 categories: ["web", "functional", "system"]
+            },
+            {
+                name: "Go",
+                category: "Язык для системного программирования",
+                description: "Go — компилируемый язык с упором на простоту и эффективность.",
+                link: "https://golang.org/doc/",
+                categories: ["system", "web"]
             },
             {
                 name: "Groovy",
@@ -1042,6 +1013,13 @@
                 categories: ["web", "system", "scripting"]
             },
             {
+                name: "PHP",
+                category: "Серверный язык веб-разработки",
+                description: "PHP — популярный серверный язык программирования для веб-разработки.",
+                link: "https://www.php.net/manual/ru/",
+                categories: ["web"]
+            },
+            {
                 name: "PowerShell",
                 category: "Оболочка и язык сценариев",
                 description: "PowerShell — оболочка командной строки и язык сценариев от Microsoft.",
@@ -1096,6 +1074,13 @@
                 description: "Ruby — динамический язык программирования с акцентом на простоту и продуктивность.",
                 link: "https://www.ruby-lang.org/ru/documentation/",
                 categories: ["web", "scripting"]
+            },
+            {
+                name: "Rust",
+                category: "Системный язык программирования",
+                description: "Rust — язык системного программирования с акцентом на безопасность и производительность.",
+                link: "https://doc.rust-lang.org/stable/",
+                categories: ["system", "web", "embedded"]
             },
             {
                 name: "Scala",
@@ -1159,6 +1144,190 @@
                 description: "RISC-V — открытая архитектура набора команд (ISA) на основе RISC.",
                 link: "https://riscv.org/",
                 categories: ["system", "embedded"]
+            },
+
+            // Дополнительные технологии и фреймворки
+            {
+                name: "Ruby on Rails",
+                category: "Веб-фреймворк для Ruby",
+                description: "Rails — полнофункциональный фреймворк для быстрой разработки веб-приложений на Ruby.",
+                link: "https://guides.rubyonrails.org/",
+                categories: ["web"]
+            },
+            {
+                name: "SASS/SCSS",
+                category: "Препроцессор CSS",
+                description: "Sass — препроцессор CSS, добавляющий возможности переменных, вложенности и миксинов.",
+                link: "https://sass-lang.com/documentation/",
+                categories: ["web"]
+            },
+            {
+                name: "React Native",
+                category: "Фреймворк для мобильной разработки",
+                description: "React Native — фреймворк для создания нативных мобильных приложений с использованием React.",
+                link: "https://reactnative.dev/docs/getting-started",
+                categories: ["mobile"]
+            },
+            {
+                name: "Flutter",
+                category: "Фреймворк для кроссплатформенной разработки",
+                description: "Flutter — фреймворк от Google для создания нативных приложений из единой кодовой базы.",
+                link: "https://docs.flutter.dev/",
+                categories: ["mobile"]
+            },
+            {
+                name: "Xamarin",
+                category: "Платформа для мобильной разработки",
+                description: "Xamarin — платформа для создания кроссплатформенных мобильных приложений на C#.",
+                link: "https://docs.microsoft.com/ru-ru/xamarin/",
+                categories: ["mobile"]
+            },
+            {
+                name: "Assembly",
+                category: "Низкоуровневый язык программирования",
+                description: "Assembly — низкоуровневый язык программирования, близкий к машинному коду.",
+                link: "https://www.tutorialspoint.com/assembly_programming/",
+                categories: ["system", "embedded"]
+            },
+            {
+                name: "Zig",
+                category: "Системный язык программирования",
+                description: "Zig — современный системный язык программирования с акцентом на простоту и производительность.",
+                link: "https://ziglang.org/documentation/master/",
+                categories: ["system"]
+            },
+            {
+                name: "PostgreSQL",
+                category: "Реляционная СУБД",
+                description: "PostgreSQL — мощная объектно-реляционная система управления базами данных с открытым исходным кодом.",
+                link: "https://www.postgresql.org/docs/",
+                categories: ["database"]
+            },
+            {
+                name: "MongoDB",
+                category: "Документоориентированная СУБД",
+                description: "MongoDB — NoSQL база данных, использующая документоориентированную модель.",
+                link: "https://www.mongodb.com/docs/",
+                categories: ["database"]
+            },
+            {
+                name: "SQLite",
+                category: "Встраиваемая СУБД",
+                description: "SQLite — компактная встраиваемая реляционная база данных.",
+                link: "https://www.sqlite.org/docs.html",
+                categories: ["database"]
+            },
+            {
+                name: "Redis",
+                category: "Хранилище ключ-значение",
+                description: "Redis — высокопроизводительное хранилище структур данных в памяти.",
+                link: "https://redis.io/documentation",
+                categories: ["database"]
+            },
+            {
+                name: "TensorFlow",
+                category: "Фреймворк для машинного обучения",
+                description: "TensorFlow — открытая платформа машинного обучения от Google.",
+                link: "https://www.tensorflow.org/learn",
+                categories: ["ai", "data"]
+            },
+            {
+                name: "PyTorch",
+                category: "Фреймворк для машинного обучения",
+                description: "PyTorch — открытая библиотека машинного обучения на Python.",
+                link: "https://pytorch.org/docs/stable/index.html",
+                categories: ["ai", "data"]
+            },
+            {
+                name: "Pandas",
+                category: "Библиотека для анализа данных",
+                description: "Pandas — мощная библиотека Python для анализа и обработки данных.",
+                link: "https://pandas.pydata.org/docs/",
+                categories: ["data"]
+            },
+            {
+                name: "Docker",
+                category: "Платформа контейнеризации",
+                description: "Docker — платформа для разработки, доставки и запуска приложений в контейнерах.",
+                link: "https://docs.docker.com/",
+                categories: ["devops"]
+            },
+            {
+                name: "Kubernetes",
+                category: "Оркестратор контейнеров",
+                description: "Kubernetes — система оркестрации контейнеризированных приложений.",
+                link: "https://kubernetes.io/docs/home/",
+                categories: ["devops"]
+            },
+            {
+                name: "Ansible",
+                category: "Инструмент автоматизации",
+                description: "Ansible — платформа для автоматизации IT-процессов и управления конфигурациями.",
+                link: "https://docs.ansible.com/",
+                categories: ["devops"]
+            },
+            {
+                name: "Terraform",
+                category: "Инфраструктура как код",
+                description: "Terraform — инструмент для безопасного построения, изменения и управления инфраструктурой.",
+                link: "https://developer.hashicorp.com/terraform/docs",
+                categories: ["devops"]
+            },
+            {
+                name: "ASP.NET",
+                category: "Веб-фреймворк от Microsoft",
+                description: "ASP.NET — фреймворк для построения веб-приложений и сервисов на платформе .NET.",
+                link: "https://metanit.com/sharp/aspnet5/",
+                categories: ["web"]
+            },
+            {
+                name: "Entity Framework",
+                category: "ORM для .NET",
+                description: "Entity Framework — объектно-реляционный преобразователь для платформы .NET.",
+                link: "https://metanit.com/sharp/entityframeworkcore/",
+                categories: ["database"]
+            },
+            {
+                name: "WPF",
+                category: "Платформа для desktop приложений",
+                description: "WPF — платформа для построения графических интерфейсов desktop приложений на .NET.",
+                link: "https://metanit.com/sharp/wpf/",
+                categories: ["system"]
+            },
+            {
+                name: "Blazor",
+                category: "Веб-фреймворк на C#",
+                description: "Blazor — фреймворк для построения интерактивных веб-UI с использованием C# вместо JavaScript.",
+                link: "https://metanit.com/sharp/blazor/",
+                categories: ["web"]
+            },
+            {
+                name: "Raspberry Pi",
+                category: "Платформа для IoT",
+                description: "Raspberry Pi — одноплатный компьютер для обучения программированию и IoT проектов.",
+                link: "https://www.raspberrypi.com/documentation/",
+                categories: ["iot", "embedded"]
+            },
+            {
+                name: "ESP32",
+                category: "Микроконтроллер для IoT",
+                description: "ESP32 — популярный микроконтроллер с Wi-Fi и Bluetooth для IoT устройств.",
+                link: "https://docs.espressif.com/projects/esp-idf/en/latest/esp32/",
+                categories: ["iot", "embedded"]
+            },
+            {
+                name: "Arduino",
+                category: "Платформа для электронных проектов",
+                description: "Arduino — открытая платформа для создания электронных устройств и IoT проектов.",
+                link: "https://progoschool.ru/electronics-for-beginners/arduino-programing-base/",
+                categories: ["iot", "embedded"]
+            },
+            {
+                name: "MATLAB",
+                category: "Платформа для вычислений",
+                description: "MATLAB — платформа для математических вычислений, анализа данных и визуализации.",
+                link: "https://www.mathworks.com/help/matlab/index.html",
+                categories: ["data", "ai"]
             }
         ];
 
@@ -1220,7 +1389,8 @@
                 'devops': 'DevOps',
                 'ai': 'AI/ML',
                 'functional': 'Функциональные',
-                'scripting': 'Скриптовые'
+                'scripting': 'Скриптовые',
+                'iot': 'IoT'
             };
             return categoryNames[category] || category;
         }
