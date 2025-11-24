@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevHub - Все для изучения программирования</title>
+    <title>CodeMentor - 80+ Языков и Фреймворков</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
     <style>
         * {
@@ -174,23 +174,20 @@
             border-bottom: 1px solid var(--border-color);
         }
         
-        /* Разные цвета для разных категорий языков */
+        /* Разные цвета для разных категорий */
         .card[data-categories*="web"] .card-header { background: linear-gradient(135deg, #1e40af, #3b82f6); }
         .card[data-categories*="game"] .card-header { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
         .card[data-categories*="mobile"] .card-header { background: linear-gradient(135deg, #059669, #10b981); }
         .card[data-categories*="system"] .card-header { background: linear-gradient(135deg, #dc2626, #ef4444); }
         .card[data-categories*="data"] .card-header { background: linear-gradient(135deg, #ea580c, #f97316); }
         .card[data-categories*="database"] .card-header { background: linear-gradient(135deg, #0369a1, #0ea5e9); }
-        .card[data-categories*="embedded"] .card-header { background: linear-gradient(135deg, #0d9488, #14b8a6); }
         .card[data-categories*="devops"] .card-header { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
         .card[data-categories*="ai"] .card-header { background: linear-gradient(135deg, #dc2626, #ef4444); }
-        .card[data-categories*="functional"] .card-header { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
-        .card[data-categories*="scripting"] .card-header { background: linear-gradient(135deg, #ca8a04, #eab308); }
-        .card[data-categories*="ide"] .card-header { background: linear-gradient(135deg, #059669, #10b981); }
-        .card[data-categories*="frontend"] .card-header { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
-        .card[data-categories*="backend"] .card-header { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .card[data-categories*="low-level"] .card-header { background: linear-gradient(135deg, #475569, #64748b); }
+        .card[data-categories*="framework"] .card-header { background: linear-gradient(135deg, #db2777, #ec4899); }
+        .card[data-categories*="education"] .card-header { background: linear-gradient(135deg, #059669, #10b981); }
+        .card[data-categories*="practice"] .card-header { background: linear-gradient(135deg, #ea580c, #f97316); }
         .card[data-categories*="engine"] .card-header { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
-        .card[data-categories*="iot"] .card-header { background: linear-gradient(135deg, #0d9488, #14b8a6); }
         
         .card-header h3 {
             font-size: 1.4rem;
@@ -210,6 +207,45 @@
             flex: 1;
             font-size: 0.9rem;
             line-height: 1.5;
+        }
+        
+        .resources {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #10b981;
+        }
+        
+        .resources h4 {
+            color: #10b981;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .resources ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .resources li {
+            margin-bottom: 0.3rem;
+            font-size: 0.8rem;
+        }
+        
+        .resources a {
+            color: var(--text-primary);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        
+        .resources a:hover {
+            opacity: 1;
+            text-decoration: underline;
         }
         
         .btn {
@@ -235,12 +271,18 @@
             transform: translateY(-2px);
         }
 
-        .btn-success {
-            background: linear-gradient(135deg, #10b981, #34d399);
+        .btn-practice {
+            background: linear-gradient(135deg, #ea580c, #f97316);
+            margin-left: 8px;
         }
 
-        .btn-warning {
-            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+        .btn-practice:hover {
+            background: linear-gradient(135deg, #f97316, #fb923c);
+        }
+        
+        .btn-container {
+            display: flex;
+            gap: 8px;
         }
         
         .empty-state {
@@ -286,6 +328,10 @@
             
             .container {
                 padding: 1rem;
+            }
+            
+            .btn-container {
+                flex-direction: column;
             }
         }
         
@@ -346,373 +392,23 @@
             font-size: 0.6rem;
             color: rgba(255, 255, 255, 0.8);
         }
-        
-        /* Стили для ресурсов обучения */
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        
-        .resource-card {
-            background: var(--bg-card);
-            border-radius: 12px;
-            padding: 1.5rem;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-        
-        .resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-        
-        .resource-card h4 {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .resource-card p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-        
-        .platforms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .platform-card {
-            background: var(--bg-card);
-            border-radius: 8px;
-            padding: 1rem;
-            border: 1px solid var(--border-color);
-            text-align: center;
-        }
-        
-        .platform-card h5 {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Стили для установщиков */
-        .installer-links {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        /* Стили для изображений ресурсов */
-        .resource-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            object-fit: cover;
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>🚀 DevHub</h1>
-        <p>Все ресурсы для изучения программирования в одном месте</p>
+        <h1>🚀 CodeMentor - 80+ Языков и Фреймворков</h1>
+        <p>Полная коллекция языков программирования, фреймворков, инструментов и обучающих ресурсов</p>
     </header>
     
     <div class="container">
-        <!-- Секция игровых движков -->
         <div class="section">
-            <h2 class="section-title">🎮 Игровые движки</h2>
-            <div class="content">
-                <div class="card" data-categories="engine">
-                    <div class="card-header">
-                        <h3>Unity</h3>
-                        <p>Кроссплатформенный движок</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Популярный движок для создания 2D и 3D игр с поддержкой множества платформ.</p>
-                        <div class="installer-links">
-                            <a href="https://unity.com/download" class="btn btn-success" target="_blank">Скачать</a>
-                            <a href="https://docs.unity3d.com/Manual/index.html" class="btn" target="_blank">Документация</a>
-                            <a href="https://assetstore.unity.com" class="btn btn-warning" target="_blank">Asset Store</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="engine">
-                    <div class="card-header">
-                        <h3>Unreal Engine</h3>
-                        <p>AAA движок от Epic Games</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Мощный движок для создания высококачественных 3D игр с передовой графикой.</p>
-                        <div class="installer-links">
-                            <a href="https://www.unrealengine.com/en-US/download" class="btn btn-success" target="_blank">Скачать</a>
-                            <a href="https://docs.unrealengine.com" class="btn" target="_blank">Документация</a>
-                            <a href="https://www.unrealengine.com/marketplace" class="btn btn-warning" target="_blank">Marketplace</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="engine">
-                    <div class="card-header">
-                        <h3>Godot</h3>
-                        <p>Открытый движок</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Бесплатный открытый движок с современным визуальным редактором и поддержкой 2D/3D.</p>
-                        <div class="installer-links">
-                            <a href="https://godotengine.org/download" class="btn btn-success" target="_blank">Скачать</a>
-                            <a href="https://docs.godotengine.org" class="btn" target="_blank">Документация</a>
-                            <a href="https://godotengine.org/asset-library" class="btn btn-warning" target="_blank">Asset Library</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="engine">
-                    <div class="card-header">
-                        <h3>Cocos2d</h3>
-                        <p>Движок для 2D игр</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Популярный фреймворк для создания 2D игр и интерактивного контента.</p>
-                        <div class="installer-links">
-                            <a href="https://www.cocos.com/en/cocos2dx" class="btn btn-success" target="_blank">Скачать</a>
-                            <a href="https://docs.cocos.com" class="btn" target="_blank">Документация</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Секция IDE и редакторов -->
-        <div class="section">
-            <h2 class="section-title">🔧 IDE и редакторы кода</h2>
-            <div class="content">
-                <div class="card" data-categories="ide">
-                    <div class="card-header">
-                        <h3>Visual Studio Code</h3>
-                        <p>Редактор кода от Microsoft</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Бесплатный редактор с поддержкой расширений для всех популярных языков программирования.</p>
-                        <div class="installer-links">
-                            <a href="https://code.visualstudio.com/download" class="btn btn-success" target="_blank">Скачать</a>
-                            <a href="https://code.visualstudio.com/docs" class="btn" target="_blank">Документация</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="ide">
-                    <div class="card-header">
-                        <h3>IntelliJ IDEA</h3>
-                        <p>IDE для Java и Kotlin</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Мощная среда разработки с умными подсказками и рефакторингом для JVM языков.</p>
-                        <div class="installer-links">
-                            <a href="https://www.jetbrains.com/idea/download/" class="btn btn-success" target="_blank">Скачать</a>
-                            <a href="https://www.jetbrains.com/idea/documentation/" class="btn" target="_blank">Документация</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="ide">
-                    <div class="card-header">
-                        <h3>PyCharm</h3>
-                        <p>IDE для Python</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Специализированная среда разработки для Python с поддержкой Django, Flask и научных библиотек.</p>
-                        <div class="installer-links">
-                            <a href="https://www.jetbrains.com/pycharm/download/" class="btn btn-success" target="_blank">Скачать</a>
-                            <a href="https://www.jetbrains.com/pycharm/documentation/" class="btn" target="_blank">Документация</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="ide">
-                    <div class="card-header">
-                        <h3>Android Studio</h3>
-                        <p>IDE для Android разработки</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Официальная среда разработки для создания приложений под Android на Java и Kotlin.</p>
-                        <div class="installer-links">
-                            <a href="https://developer.android.com/studio" class="btn btn-success" target="_blank">Скачать</a>
-                            <a href="https://developer.android.com/docs" class="btn" target="_blank">Документация</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Секция фреймворков -->
-        <div class="section">
-            <h2 class="section-title">🛠️ Популярные фреймворки</h2>
-            <div class="content">
-                <div class="card" data-categories="frontend">
-                    <div class="card-header">
-                        <h3>React</h3>
-                        <p>JavaScript библиотека для UI</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Библиотека для создания пользовательских интерфейсов с компонентным подходом.</p>
-                        <div class="installer-links">
-                            <a href="https://react.dev" class="btn" target="_blank">Сайт</a>
-                            <a href="https://react.dev/learn" class="btn btn-success" target="_blank">Документация</a>
-                            <a href="https://metanit.com/web/react/" class="btn btn-warning" target="_blank">Metanit</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="frontend">
-                    <div class="card-header">
-                        <h3>Vue.js</h3>
-                        <p>Прогрессивный JavaScript фреймворк</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Доступный фреймворк для создания современных веб-интерфейсов.</p>
-                        <div class="installer-links">
-                            <a href="https://vuejs.org" class="btn" target="_blank">Сайт</a>
-                            <a href="https://vuejs.org/guide" class="btn btn-success" target="_blank">Документация</a>
-                            <a href="https://metanit.com/web/vue/" class="btn btn-warning" target="_blank">Metanit</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="frontend">
-                    <div class="card-header">
-                        <h3>Angular</h3>
-                        <p>Платформа для веб-приложений</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Полнофункциональный фреймворк для создания сложных веб-приложений.</p>
-                        <div class="installer-links">
-                            <a href="https://angular.io" class="btn" target="_blank">Сайт</a>
-                            <a href="https://angular.io/docs" class="btn btn-success" target="_blank">Документация</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="backend">
-                    <div class="card-header">
-                        <h3>Node.js</h3>
-                        <p>Серверная платформа</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Среда выполнения JavaScript на стороне сервера для создания масштабируемых приложений.</p>
-                        <div class="installer-links">
-                            <a href="https://nodejs.org" class="btn" target="_blank">Сайт</a>
-                            <a href="https://nodejs.org/en/docs/" class="btn btn-success" target="_blank">Документация</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="backend">
-                    <div class="card-header">
-                        <h3>Django</h3>
-                        <p>Python веб-фреймворк</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Высокоуровневый фреймворк для быстрой разработки безопасных веб-приложений.</p>
-                        <div class="installer-links">
-                            <a href="https://www.djangoproject.com" class="btn" target="_blank">Сайт</a>
-                            <a href="https://docs.djangoproject.com" class="btn btn-success" target="_blank">Документация</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-categories="backend">
-                    <div class="card-header">
-                        <h3>Spring Boot</h3>
-                        <p>Java фреймворк</p>
-                    </div>
-                    <div class="card-body">
-                        <p>Фреймворк для создания Spring-приложений с минимальной конфигурацией.</p>
-                        <div class="installer-links">
-                            <a href="https://spring.io/projects/spring-boot" class="btn" target="_blank">Сайт</a>
-                            <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/" class="btn btn-success" target="_blank">Документация</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Секция обучающих платформ -->
-        <div class="section">
-            <h2 class="section-title">🎓 Обучающие платформы</h2>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <div class="resource-image">📚</div>
-                    <h4>Codecademy</h4>
-                    <p>Учитесь программировать в интерактивном режиме бесплатно. Практические упражнения и проекты.</p>
-                    <a href="https://www.codecademy.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="resource-card">
-                    <div class="resource-image">🆓</div>
-                    <h4>Free Code Camp</h4>
-                    <p>Учитесь программировать, участвуйте в проектах, зарабатывайте сертификаты онлайн.</p>
-                    <a href="https://www.freecodecamp.org" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="resource-card">
-                    <div class="resource-image">🎯</div>
-                    <h4>Udacity</h4>
-                    <p>Получите нанодиплом, признаваемый крупнейшими IT компаниями.</p>
-                    <a href="https://www.udacity.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="resource-card">
-                    <div class="resource-image">📺</div>
-                    <h4>Platzi</h4>
-                    <p>Стримы в прямом эфире по маркетингу, дизайну, программированию.</p>
-                    <a href="https://platzi.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="resource-card">
-                    <div class="resource-image">🎮</div>
-                    <h4>CodeCombat</h4>
-                    <p>Изучайте компьютерные науки, играя в настоящую игру.</p>
-                    <a href="https://codecombat.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="resource-card">
-                    <div class="resource-image">📅</div>
-                    <h4>One Month</h4>
-                    <p>Научитесь программировать и создавать веб-приложения за один месяц.</p>
-                    <a href="https://onemonth.com" class="btn" target="_blank">Перейти</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Секция платформ для практики -->
-        <div class="section">
-            <h2 class="section-title">💻 Платформы для практики</h2>
-            <div class="platforms-grid">
-                <div class="platform-card">
-                    <h5>Codewars</h5>
-                    <a href="https://www.codewars.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="platform-card">
-                    <h5>LeetCode</h5>
-                    <a href="https://leetcode.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="platform-card">
-                    <h5>HackerRank</h5>
-                    <a href="https://www.hackerrank.com" class="btn" target="_blank">Перейти</a>
-                </div>
-                <div class="platform-card">
-                    <h5>Exercism</h5>
-                    <a href="https://exercism.org" class="btn" target="_blank">Перейти</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Секция документации по языкам -->
-        <div class="section">
-            <h2 class="section-title">📚 Документация по языкам программирования</h2>
+            <h2 class="section-title">📚 Все технологии для разработки</h2>
             <div class="search-container">
-                <input type="text" class="search-box" id="searchInput" placeholder="Поиск по языкам программирования...">
+                <input type="text" class="search-box" id="searchInput" placeholder="Поиск по языкам, фреймворкам, инструментам...">
             </div>
             
             <div class="counter">
-                Найдено: <span id="cardCount">150</span> языков и технологий
+                Найдено: <span id="cardCount">80+</span> технологий и ресурсов
             </div>
             
             <div class="nav-tabs">
@@ -725,9 +421,11 @@
                 <button class="nav-tab" data-category="data">Data Science</button>
                 <button class="nav-tab" data-category="ai">AI/ML</button>
                 <button class="nav-tab" data-category="devops">DevOps</button>
-                <button class="nav-tab" data-category="embedded">IoT/Embedded</button>
-                <button class="nav-tab" data-category="functional">Функциональные</button>
-                <button class="nav-tab" data-category="scripting">Скриптовые</button>
+                <button class="nav-tab" data-category="low-level">Низкоуровневые</button>
+                <button class="nav-tab" data-category="framework">Фреймворки</button>
+                <button class="nav-tab" data-category="education">Обучение</button>
+                <button class="nav-tab" data-category="practice">Практика</button>
+                <button class="nav-tab" data-category="engine">Движки</button>
             </div>
             
             <div class="content" id="content">
@@ -737,597 +435,550 @@
     </div>
     
     <footer>
-        <p>© 2024 DevHub - Все ресурсы для изучения программирования. Все права защищены.</p>
+        <p>© 2024 CodeMentor - Все языки программирования. Все права защищены.</p>
     </footer>
     
     <script>
-        // Данные для карточек
+        // 80+ языков, фреймворков и обучающих ресурсов
         const languages = [
-            // Существующие языки
+            // Основные языки программирования
             {
                 name: "Python",
                 category: "Универсальный язык",
-                description: "Python — интерпретируемый язык программирования с простым синтаксисом.",
+                description: "Идеален для начинающих. Используется в веб-разработке, Data Science, AI, автоматизации. Богатая экосистема библиотек.",
                 link: "https://docs.python.org/3/index.html",
-                categories: ["web", "system", "data", "ai", "scripting"]
+                practice: "https://www.hackerrank.com/domains/tutorials/10-days-of-python",
+                categories: ["web", "system", "data", "ai"],
+                resources: [
+                    "Official Python Tutorial",
+                    "Python for Everybody",
+                    "Automate the Boring Stuff"
+                ]
             },
             {
                 name: "JavaScript",
-                category: "Язык программирования для веб",
-                description: "JavaScript — мультипарадигменный язык программирования для веб-разработки.",
+                category: "Язык для веб-разработки",
+                description: "Основной язык фронтенда. Запускается в браузере, также используется на сервере (Node.js). Современный ES6+ синтаксис.",
                 link: "https://developer.mozilla.org/ru/docs/Web/JavaScript",
-                categories: ["web", "mobile", "scripting"]
+                practice: "https://www.codewars.com/kata/search/javascript",
+                categories: ["web", "mobile"],
+                resources: [
+                    "MDN JavaScript Guide",
+                    "JavaScript.info",
+                    "Eloquent JavaScript"
+                ]
             },
             {
                 name: "Java",
                 category: "Кроссплатформенный язык",
-                description: "Java — строго типизированный объектно-ориентированный язык программирования.",
+                description: "Мощный ООП язык для enterprise приложений, Android разработки и больших систем. Сильная типизация, JVM.",
                 link: "https://docs.oracle.com/en/java/",
-                categories: ["web", "mobile", "system"]
+                practice: "https://www.hackerrank.com/domains/java",
+                categories: ["web", "mobile", "system"],
+                resources: [
+                    "Oracle Java Tutorials",
+                    "Java Programming Masterclass",
+                    "Head First Java"
+                ]
             },
             {
                 name: "C++",
-                category: "Объектно-ориентированный C",
-                description: "C++ — язык программирования с поддержкой нескольких парадигм.",
+                category: "Системное программирование",
+                description: "Высокопроизводительный язык для игр, ОС, embedded систем. Прямой доступ к памяти, ООП, шаблоны.",
                 link: "https://learn.microsoft.com/ru-ru/cpp/cpp/?view=msvc-170",
-                categories: ["game", "system", "embedded"]
+                practice: "https://leetcode.com/tag/cpp/",
+                categories: ["game", "system", "low-level"],
+                resources: [
+                    "C++ Reference",
+                    "LearnCPP.com",
+                    "The C++ Programming Language"
+                ]
             },
             {
                 name: "C#",
                 category: "Microsoft .NET Framework",
-                description: "C# — современный объектно-ориентированный язык программирования, разработанный Microsoft.",
+                description: "Современный язык для Windows приложений, игр на Unity, веб-разработки (ASP.NET). Сильная экосистема .NET.",
                 link: "https://learn.microsoft.com/ru-ru/dotnet/csharp/",
-                categories: ["game", "system", "web"]
-            },
-
-            // Новые языки из вашего списка
-            {
-                name: "Agda",
-                category: "Функциональный язык с зависимыми типами",
-                description: "Agda — функциональный язык программирования с зависимыми типами для верификации программ.",
-                link: "https://agda.readthedocs.io/",
-                categories: ["functional"]
-            },
-            {
-                name: "BF",
-                category: "Эзотерический язык",
-                description: "Brainfuck — эзотерический язык программирования с минималистичным набором команд.",
-                link: "https://esolangs.org/wiki/Brainfuck",
-                categories: ["system"]
+                practice: "https://exercism.org/tracks/csharp",
+                categories: ["game", "system", "web"],
+                resources: [
+                    "Microsoft C# Guide",
+                    "C# Programming Yellow Book",
+                    "Unity Learn C#"
+                ]
             },
             {
                 name: "C",
-                category: "Системный язык программирования",
-                description: "C — компилируемый язык программирования для системного программирования.",
+                category: "Фундаментальный язык",
+                description: "Базовый язык для ОС, компиляторов, embedded систем. Низкоуровневый доступ, высокая производительность.",
                 link: "https://en.cppreference.com/w/c/language",
-                categories: ["system", "embedded"]
-            },
-            {
-                name: "Clojure",
-                category: "Функциональный Lisp для JVM",
-                description: "Clojure — современный диалект Lisp, работающий на платформе JVM.",
-                link: "https://clojure.org/",
-                categories: ["web", "functional"]
-            },
-            {
-                name: "COBOL",
-                category: "Язык для бизнес-приложений",
-                description: "COBOL — язык программирования для бизнес-приложений, популярный в финансовой сфере.",
-                link: "https://www.cobol.org/",
-                categories: ["system"]
-            },
-            {
-                name: "CoffeeScript",
-                category: "Язык, компилируемый в JavaScript",
-                description: "CoffeeScript — язык программирования, транслируемый в JavaScript с упрощенным синтаксисом.",
-                link: "https://coffeescript.org/",
-                categories: ["web", "scripting"]
-            },
-            {
-                name: "Common Lisp",
-                category: "Диалект Lisp",
-                description: "Common Lisp — мощный диалект языка Lisp с поддержкой множества парадигм.",
-                link: "https://common-lisp.net/",
-                categories: ["functional", "system"]
-            },
-            {
-                name: "Coq",
-                category: "Язык для верификации",
-                description: "Coq — система для разработки и верификации математических доказательств.",
-                link: "https://coq.inria.fr/",
-                categories: ["functional"]
-            },
-            {
-                name: "Crystal",
-                category: "Статически типизированный Ruby",
-                description: "Crystal — язык программирования с синтаксисом Ruby и статической типизацией.",
-                link: "https://crystal-lang.org/",
-                categories: ["web", "system"]
-            },
-            {
-                name: "D",
-                category: "Системный язык программирования",
-                description: "D — язык программирования системного уровня с современным синтаксисом.",
-                link: "https://dlang.org/",
-                categories: ["system"]
-            },
-            {
-                name: "Dart",
-                category: "Язык для Flutter",
-                description: "Dart — язык программирования от Google для создания кроссплатформенных приложений.",
-                link: "https://dart.dev/guides",
-                categories: ["mobile", "web"]
-            },
-            {
-                name: "Elixir",
-                category: "Функциональный язык",
-                description: "Elixir — динамический функциональный язык для создания масштабируемых приложений.",
-                link: "https://elixir-lang.org/docs.html",
-                categories: ["web", "functional"]
-            },
-            {
-                name: "Elm",
-                category: "Функциональный язык для веб-UI",
-                description: "Elm — функциональный язык для надежных веб-интерфейсов с сильной системой типов.",
-                link: "https://guide.elm-lang.org/",
-                categories: ["web", "functional"]
-            },
-            {
-                name: "Erlang",
-                category: "Язык для распределенных систем",
-                description: "Erlang — язык программирования для построения распределенных отказоустойчивых систем.",
-                link: "https://www.erlang.org/docs",
-                categories: ["system", "functional"]
-            },
-            {
-                name: "Factor",
-                category: "Язык с конкатенативным стилем",
-                description: "Factor — язык программирования с конкатенативным стилем и интерактивной средой.",
-                link: "https://factorcode.org/",
-                categories: ["functional"]
-            },
-            {
-                name: "Forth",
-                category: "Стековый язык",
-                description: "Forth — интерактивный язык программирования, основанный на стековой архитектуре.",
-                link: "https://www.forth.com/",
-                categories: ["embedded", "system"]
-            },
-            {
-                name: "Fortran",
-                category: "Язык для научных вычислений",
-                description: "Fortran — один из старейших языков программирования, популярный в научных вычислениях.",
-                link: "https://fortran-lang.org/",
-                categories: ["data", "system"]
-            },
-            {
-                name: "F#",
-                category: "Функциональный язык для .NET",
-                description: "F# — функциональный язык программирования для платформы .NET.",
-                link: "https://fsharp.org/",
-                categories: ["web", "functional", "system"]
-            },
-            {
-                name: "Go",
-                category: "Язык для системного программирования",
-                description: "Go — компилируемый язык с упором на простоту и эффективность.",
-                link: "https://golang.org/doc/",
-                categories: ["system", "web"]
-            },
-            {
-                name: "Groovy",
-                category: "Динамический язык для JVM",
-                description: "Groovy — динамический язык для платформы Java с упрощенным синтаксисом.",
-                link: "https://groovy-lang.org/",
-                categories: ["web", "scripting"]
-            },
-            {
-                name: "Haskell",
-                category: "Чисто функциональный язык",
-                description: "Haskell — стандартизированный чисто функциональный язык программирования.",
-                link: "https://www.haskell.org/documentation/",
-                categories: ["functional", "system"]
-            },
-            {
-                name: "Haxe",
-                category: "Кроссплатформенный язык",
-                description: "Haxe — язык программирования для кроссплатформенной разработки.",
-                link: "https://haxe.org/",
-                categories: ["web", "game", "mobile"]
-            },
-            {
-                name: "Idris",
-                category: "Язык с зависимыми типами",
-                description: "Idris — функциональный язык программирования с поддержкой зависимых типов.",
-                link: "https://www.idris-lang.org/",
-                categories: ["functional"]
-            },
-            {
-                name: "Julia",
-                category: "Язык для научных вычислений",
-                description: "Julia — высокопроизводительный язык для технических вычислений.",
-                link: "https://docs.julialang.org/",
-                categories: ["data", "ai", "system"]
-            },
-            {
-                name: "Kotlin",
-                category: "Современный язык для JVM и Android",
-                description: "Kotlin — статически типизированный язык программирования, работающий поверх JVM.",
-                link: "https://kotlinlang.org/docs/home.html",
-                categories: ["mobile", "web"]
-            },
-            {
-                name: "Lean",
-                category: "Язык для математических доказательств",
-                description: "Lean — функциональный язык программирования для верификации математических теорем.",
-                link: "https://leanprover.github.io/",
-                categories: ["functional"]
-            },
-            {
-                name: "Lua",
-                category: "Скриптовый язык",
-                description: "Lua — легкий скриптовый язык, предназначенный для встраивания в приложения.",
-                link: "https://www.lua.org/manual/5.4/",
-                categories: ["game", "embedded", "scripting"]
-            },
-            {
-                name: "NASM",
-                category: "Ассемблер для x86",
-                description: "NASM — кроссплатформенный ассемблер для архитектуры x86.",
-                link: "https://www.nasm.us/",
-                categories: ["system", "embedded"]
-            },
-            {
-                name: "Nim",
-                category: "Эффективный системный язык",
-                description: "Nim — статически типизированный язык программирования с эффективным кодом.",
-                link: "https://nim-lang.org/",
-                categories: ["system", "web"]
-            },
-            {
-                name: "Objective-C",
-                category: "Язык для Apple экосистемы",
-                description: "Objective-C — объектно-ориентированный язык программирования для платформ Apple.",
-                link: "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/",
-                categories: ["mobile", "system"]
-            },
-            {
-                name: "OCaml",
-                category: "Функциональный язык",
-                description: "OCaml — диалект языка ML с объектно-ориентированными расширениями.",
-                link: "https://ocaml.org/",
-                categories: ["functional", "system"]
-            },
-            {
-                name: "Pascal",
-                category: "Императивный язык",
-                description: "Pascal — структурированный язык программирования, популярный в образовании.",
-                link: "https://www.freepascal.org/",
-                categories: ["system"]
-            },
-            {
-                name: "Perl",
-                category: "Универсальный язык",
-                description: "Perl — высокоуровневый интерпретируемый динамический язык программирования.",
-                link: "https://perldoc.perl.org/",
-                categories: ["web", "system", "scripting"]
-            },
-            {
-                name: "PHP",
-                category: "Серверный язык веб-разработки",
-                description: "PHP — популярный серверный язык программирования для веб-разработки.",
-                link: "https://www.php.net/manual/ru/",
-                categories: ["web"]
-            },
-            {
-                name: "PowerShell",
-                category: "Оболочка и язык сценариев",
-                description: "PowerShell — оболочка командной строки и язык сценариев от Microsoft.",
-                link: "https://docs.microsoft.com/powershell/",
-                categories: ["devops", "scripting"]
-            },
-            {
-                name: "Prolog",
-                category: "Логический язык",
-                description: "Prolog — язык логического программирования, основанный на формальной логике.",
-                link: "https://www.swi-prolog.org/",
-                categories: ["ai", "functional"]
-            },
-            {
-                name: "PureScript",
-                category: "Функциональный язык для веб",
-                description: "PureScript — небольшой строго типизированный функциональный язык, компилируемый в JavaScript.",
-                link: "https://www.purescript.org/",
-                categories: ["web", "functional"]
-            },
-            {
-                name: "R",
-                category: "Язык для статистических вычислений",
-                description: "R — язык программирования для статистических вычислений и графики.",
-                link: "https://cran.r-project.org/manuals.html",
-                categories: ["data", "ai"]
-            },
-            {
-                name: "Racket",
-                category: "Язык для создания языков",
-                description: "Racket — язык программирования общего назначения и платформа для создания языков.",
-                link: "https://docs.racket-lang.org/",
-                categories: ["functional", "web"]
-            },
-            {
-                name: "Raku",
-                category: "Современный Perl",
-                description: "Raku — современный член семейства языков Perl с улучшенным дизайном.",
-                link: "https://docs.raku.org/",
-                categories: ["web", "scripting"]
-            },
-            {
-                name: "Reason",
-                category: "Синтаксис OCaml для JavaScript",
-                description: "Reason — синтаксис поверх OCaml, компилируемый в JavaScript и нативный код.",
-                link: "https://reasonml.github.io/",
-                categories: ["web", "functional"]
-            },
-            {
-                name: "Ruby",
-                category: "Динамический язык программирования",
-                description: "Ruby — динамический язык программирования с акцентом на простоту и продуктивность.",
-                link: "https://www.ruby-lang.org/ru/documentation/",
-                categories: ["web", "scripting"]
-            },
-            {
-                name: "Rust",
-                category: "Системный язык программирования",
-                description: "Rust — язык системного программирования с акцентом на безопасность и производительность.",
-                link: "https://doc.rust-lang.org/stable/",
-                categories: ["system", "web", "embedded"]
-            },
-            {
-                name: "Scala",
-                category: "Функциональный язык для JVM",
-                description: "Scala — язык программирования, сочетающий объектно-ориентированное и функциональное программирование.",
-                link: "https://docs.scala-lang.org/",
-                categories: ["web", "system", "functional"]
-            },
-            {
-                name: "Shell",
-                category: "Командная оболочка",
-                description: "Shell — язык сценариев для автоматизации задач в Unix-подобных системах.",
-                link: "https://www.gnu.org/software/bash/manual/",
-                categories: ["devops", "system", "scripting"]
-            },
-            {
-                name: "Solidity",
-                category: "Язык для смарт-контрактов",
-                description: "Solidity — объектно-ориентированный язык для написания смарт-контрактов в Ethereum.",
-                link: "https://docs.soliditylang.org/",
-                categories: ["web", "system"]
-            },
-            {
-                name: "SQL",
-                category: "Язык запросов к базам данных",
-                description: "SQL — декларативный язык программирования для работы с реляционными базами данных.",
-                link: "https://www.w3schools.com/sql/",
-                categories: ["database"]
-            },
-            {
-                name: "Swift",
-                category: "Язык для Apple экосистемы",
-                description: "Swift — современный язык программирования от Apple для iOS, macOS, watchOS и tvOS.",
-                link: "https://docs.swift.org/swift-book/",
-                categories: ["mobile", "system"]
-            },
-            {
-                name: "TypeScript",
-                category: "Типизированный JavaScript",
-                description: "TypeScript — язык программирования, представляющий собой надмножество JavaScript.",
-                link: "https://www.typescriptlang.org/docs/",
-                categories: ["web"]
-            },
-            {
-                name: "Visual Basic",
-                category: "Язык программирования от Microsoft",
-                description: "Visual Basic — язык программирования от Microsoft с синтаксисом, похожим на BASIC.",
-                link: "https://docs.microsoft.com/dotnet/visual-basic/",
-                categories: ["system", "web"]
-            },
-            {
-                name: "λ Calculus",
-                category: "Формальная система",
-                description: "Лямбда-исчисление — формальная система в математической логике для определения функций.",
-                link: "https://en.wikipedia.org/wiki/Lambda_calculus",
-                categories: ["functional"]
-            },
-            {
-                name: "RISC-V",
-                category: "Архитектура набора команд",
-                description: "RISC-V — открытая архитектура набора команд (ISA) на основе RISC.",
-                link: "https://riscv.org/",
-                categories: ["system", "embedded"]
+                practice: "https://www.hackerrank.com/domains/c",
+                categories: ["system", "low-level"],
+                resources: [
+                    "The C Programming Language",
+                    "Learn C.org",
+                    "C Programming Absolute Beginner's Guide"
+                ]
             },
 
-            // Дополнительные технологии и фреймворки
+            // Веб-фреймворки
+            {
+                name: "React",
+                category: "Frontend библиотека",
+                description: "Библиотека для создания пользовательских интерфейсов. Компонентный подход, виртуальный DOM, hooks.",
+                link: "https://react.dev/learn",
+                practice: "https://react-tutorial.app/",
+                categories: ["web", "framework"],
+                resources: [
+                    "React Official Tutorial",
+                    "Fullstack Open React",
+                    "React Patterns"
+                ]
+            },
+            {
+                name: "Vue.js",
+                category: "Прогрессивный фреймворк",
+                description: "Интуитивный фреймворк для веб-интерфейсов. Постепенная адаптация, реактивность, компоненты.",
+                link: "https://vuejs.org/guide/",
+                practice: "https://vuejs.org/examples/",
+                categories: ["web", "framework"],
+                resources: [
+                    "Vue.js Guide",
+                    "Vue Mastery",
+                    "Vue School"
+                ]
+            },
+            {
+                name: "Angular",
+                category: "Полнофункциональная платформа",
+                description: "Комплексная платформа для веб-приложений. TypeScript, dependency injection, RxJS.",
+                link: "https://angular.io/docs",
+                practice: "https://angular.io/tutorial",
+                categories: ["web", "framework"],
+                resources: [
+                    "Angular Tour of Heroes",
+                    "Angular University",
+                    "Ultimate Courses"
+                ]
+            },
+            {
+                name: "Node.js",
+                category: "Серверная платформа",
+                description: "Среда выполнения JavaScript на сервере. Event-driven, неблокирующий I/O, огромная экосистема npm.",
+                link: "https://nodejs.org/en/docs/",
+                practice: "https://www.freecodecamp.org/learn/back-end-development-and-apis/",
+                categories: ["web", "system"],
+                resources: [
+                    "Node.js Guides",
+                    "The Node.js Masterclass",
+                    "Node.js Design Patterns"
+                ]
+            },
+            {
+                name: "Django",
+                category: "Python веб-фреймворк",
+                description: "Высокоуровневый фреймворк с батарейками включено. ORM, админ-панель, безопасность.",
+                link: "https://docs.djangoproject.com/",
+                practice: "https://docs.djangoproject.com/en/stable/intro/tutorial01/",
+                categories: ["web", "framework"],
+                resources: [
+                    "Django Tutorial",
+                    "Django for Beginners",
+                    "Two Scoops of Django"
+                ]
+            },
+            {
+                name: "Flask",
+                category: "Микрофреймворк Python",
+                description: "Минималистичный и гибкий фреймворк. Легковесный, расширяемый, для быстрого прототипирования.",
+                link: "https://flask.palletsprojects.com/",
+                practice: "https://flask.palletsprojects.com/tutorial/",
+                categories: ["web", "framework"],
+                resources: [
+                    "Flask Tutorial",
+                    "Flask Web Development",
+                    "Explore Flask"
+                ]
+            },
+            {
+                name: "Spring Boot",
+                category: "Java фреймворк",
+                description: "Фреймворк для production-ready приложений. Автоконфигурация, embedded серверы, микросервисы.",
+                link: "https://spring.io/projects/spring-boot",
+                practice: "https://spring.io/guides",
+                categories: ["web", "framework"],
+                resources: [
+                    "Spring Boot Guides",
+                    "Spring in Action",
+                    "Baeldung Spring"
+                ]
+            },
+            {
+                name: "Express.js",
+                category: "Минималистичный фреймворк",
+                description: "Быстрый и минималистичный веб-фреймворк для Node.js. Middleware, routing, простота.",
+                link: "https://expressjs.com/",
+                practice: "https://expressjs.com/en/starter/installing.html",
+                categories: ["web", "framework"],
+                resources: [
+                    "Express.js Guide",
+                    "Express.js Tutorial",
+                    "Node.js with Express"
+                ]
+            },
             {
                 name: "Ruby on Rails",
-                category: "Веб-фреймворк для Ruby",
-                description: "Rails — полнофункциональный фреймворк для быстрой разработки веб-приложений на Ruby.",
+                category: "Веб-фреймворк Ruby",
+                description: "Продуктивный фреймворк с Convention over Configuration. MVC, ActiveRecord, scaffolding.",
                 link: "https://guides.rubyonrails.org/",
-                categories: ["web"]
+                practice: "https://guides.rubyonrails.org/getting_started.html",
+                categories: ["web", "framework"],
+                resources: [
+                    "Rails Guides",
+                    "The Rails Tutorial",
+                    "Agile Web Development with Rails"
+                ]
             },
-            {
-                name: "SASS/SCSS",
-                category: "Препроцессор CSS",
-                description: "Sass — препроцессор CSS, добавляющий возможности переменных, вложенности и миксинов.",
-                link: "https://sass-lang.com/documentation/",
-                categories: ["web"]
-            },
+
+            // Мобильные фреймворки
             {
                 name: "React Native",
-                category: "Фреймворк для мобильной разработки",
-                description: "React Native — фреймворк для создания нативных мобильных приложений с использованием React.",
+                category: "Кроссплатформенная разработка",
+                description: "Создание нативных мобильных приложений с использованием React. Один код для iOS и Android.",
                 link: "https://reactnative.dev/docs/getting-started",
-                categories: ["mobile"]
+                practice: "https://reactnative.dev/docs/tutorial",
+                categories: ["mobile", "framework"],
+                resources: [
+                    "React Native Docs",
+                    "React Native Tutorial",
+                    "Expo Documentation"
+                ]
             },
             {
                 name: "Flutter",
-                category: "Фреймворк для кроссплатформенной разработки",
-                description: "Flutter — фреймворк от Google для создания нативных приложений из единой кодовой базы.",
+                category: "UI toolkit от Google",
+                description: "Создание нативных приложений из единой кодовой базы на Dart. Собственный движок рендеринга.",
                 link: "https://docs.flutter.dev/",
-                categories: ["mobile"]
+                practice: "https://docs.flutter.dev/codelabs",
+                categories: ["mobile", "web"],
+                resources: [
+                    "Flutter Docs",
+                    "Flutter Codelabs",
+                    "Flutter Cookbook"
+                ]
             },
             {
-                name: "Xamarin",
-                category: "Платформа для мобильной разработки",
-                description: "Xamarin — платформа для создания кроссплатформенных мобильных приложений на C#.",
-                link: "https://docs.microsoft.com/ru-ru/xamarin/",
-                categories: ["mobile"]
+                name: "SwiftUI",
+                category: "Декларативный UI фреймворк",
+                description: "Современный фреймворк для создания интерфейсов Apple платформ. Декларативный синтаксис.",
+                link: "https://developer.apple.com/tutorials/swiftui/",
+                practice: "https://developer.apple.com/tutorials/swiftui/",
+                categories: ["mobile", "framework"],
+                resources: [
+                    "SwiftUI Tutorials",
+                    "Apple Developer Documentation",
+                    "Hacking with Swift"
+                ]
+            },
+
+            // Игровые движки
+            {
+                name: "Unity",
+                category: "Кроссплатформенный движок",
+                description: "Популярный движок для 2D/3D игр. Визуальный редактор, C# scripting, богатый asset store.",
+                link: "https://docs.unity3d.com/Manual/index.html",
+                practice: "https://learn.unity.com/",
+                categories: ["game", "engine"],
+                resources: [
+                    "Unity Manual",
+                    "Unity Learn",
+                    "Brackeys Tutorials"
+                ]
             },
             {
-                name: "Assembly",
-                category: "Низкоуровневый язык программирования",
-                description: "Assembly — низкоуровневый язык программирования, близкий к машинному коду.",
-                link: "https://www.tutorialspoint.com/assembly_programming/",
-                categories: ["system", "embedded"]
+                name: "Unreal Engine",
+                category: "AAA игровой движок",
+                description: "Мощный движок для высококачественных 3D игр. Blueprints visual scripting, C++.",
+                link: "https://docs.unrealengine.com",
+                practice: "https://dev.epicgames.com/community/learning",
+                categories: ["game", "engine"],
+                resources: [
+                    "Unreal Documentation",
+                    "Unreal Online Learning",
+                    "Unreal Engine YouTube"
+                ]
             },
             {
-                name: "Zig",
-                category: "Системный язык программирования",
-                description: "Zig — современный системный язык программирования с акцентом на простоту и производительность.",
-                link: "https://ziglang.org/documentation/master/",
-                categories: ["system"]
+                name: "Godot",
+                category: "Открытый игровой движок",
+                description: "Бесплатный открытый движок с современным редактором. GDScript, visual scripting, легковесный.",
+                link: "https://docs.godotengine.org",
+                practice: "https://docs.godotengine.org/en/stable/getting_started/step_by_step/",
+                categories: ["game", "engine"],
+                resources: [
+                    "Godot Documentation",
+                    "Godot Step by Step",
+                    "GDQuest"
+                ]
             },
+
+            // Базы данных
             {
                 name: "PostgreSQL",
-                category: "Реляционная СУБД",
-                description: "PostgreSQL — мощная объектно-реляционная система управления базами данных с открытым исходным кодом.",
+                category: "Объектно-реляционная СУБД",
+                description: "Мощная СУБД с расширенными возможностями. JSON поддержка, полнотекстовый поиск, ACID.",
                 link: "https://www.postgresql.org/docs/",
-                categories: ["database"]
+                practice: "https://pgexercises.com/",
+                categories: ["database"],
+                resources: [
+                    "PostgreSQL Documentation",
+                    "PostgreSQL Tutorial",
+                    "The Art of PostgreSQL"
+                ]
             },
             {
                 name: "MongoDB",
-                category: "Документоориентированная СУБД",
-                description: "MongoDB — NoSQL база данных, использующая документоориентированную модель.",
+                category: "Документоориентированная БД",
+                description: "NoSQL база данных с гибкой схемой. Документы JSON, горизонтальное масштабирование.",
                 link: "https://www.mongodb.com/docs/",
-                categories: ["database"]
-            },
-            {
-                name: "SQLite",
-                category: "Встраиваемая СУБД",
-                description: "SQLite — компактная встраиваемая реляционная база данных.",
-                link: "https://www.sqlite.org/docs.html",
-                categories: ["database"]
+                practice: "https://university.mongodb.com/",
+                categories: ["database"],
+                resources: [
+                    "MongoDB Manual",
+                    "MongoDB University",
+                    "The Little MongoDB Book"
+                ]
             },
             {
                 name: "Redis",
-                category: "Хранилище ключ-значение",
-                description: "Redis — высокопроизводительное хранилище структур данных в памяти.",
+                category: "In-memory хранилище",
+                description: "Быстрое хранилище ключ-значение в памяти. Кэширование, pub/sub, структуры данных.",
                 link: "https://redis.io/documentation",
-                categories: ["database"]
+                practice: "https://try.redis.io/",
+                categories: ["database", "devops"],
+                resources: [
+                    "Redis Documentation",
+                    "Redis University",
+                    "Redis in Action"
+                ]
             },
+
+            // Data Science & AI
             {
                 name: "TensorFlow",
-                category: "Фреймворк для машинного обучения",
-                description: "TensorFlow — открытая платформа машинного обучения от Google.",
+                category: "ML фреймворк",
+                description: "End-to-end платформа для машинного обучения. Нейронные сети, Keras API, production-ready.",
                 link: "https://www.tensorflow.org/learn",
-                categories: ["ai", "data"]
+                practice: "https://www.tensorflow.org/tutorials",
+                categories: ["ai", "data"],
+                resources: [
+                    "TensorFlow Tutorials",
+                    "TensorFlow Certificate",
+                    "Hands-On ML with TensorFlow"
+                ]
             },
             {
                 name: "PyTorch",
-                category: "Фреймворк для машинного обучения",
-                description: "PyTorch — открытая библиотека машинного обучения на Python.",
+                category: "Исследовательский ML фреймворк",
+                description: "Гибкий фреймворк для исследований. Динамические графы, простота отладки, популярен в науке.",
                 link: "https://pytorch.org/docs/stable/index.html",
-                categories: ["ai", "data"]
+                practice: "https://pytorch.org/tutorials/",
+                categories: ["ai", "data"],
+                resources: [
+                    "PyTorch Tutorials",
+                    "PyTorch Lightning",
+                    "Deep Learning with PyTorch"
+                ]
             },
             {
                 name: "Pandas",
-                category: "Библиотека для анализа данных",
-                description: "Pandas — мощная библиотека Python для анализа и обработки данных.",
+                category: "Анализ данных",
+                description: "Мощная библиотека для анализа и манипуляции данными. DataFrames, серии, группировки.",
                 link: "https://pandas.pydata.org/docs/",
-                categories: ["data"]
+                practice: "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
+                categories: ["data"],
+                resources: [
+                    "Pandas Documentation",
+                    "10 minutes to pandas",
+                    "Python for Data Analysis"
+                ]
             },
+
+            // DevOps инструменты
             {
                 name: "Docker",
-                category: "Платформа контейнеризации",
-                description: "Docker — платформа для разработки, доставки и запуска приложений в контейнерах.",
+                category: "Контейнеризация",
+                description: "Платформа для создания и запуска контейнеров. Изоляция, переносимость, микросервисы.",
                 link: "https://docs.docker.com/",
-                categories: ["devops"]
+                practice: "https://docs.docker.com/get-started/",
+                categories: ["devops", "system"],
+                resources: [
+                    "Docker Documentation",
+                    "Docker Get Started",
+                    "Docker Deep Dive"
+                ]
             },
             {
                 name: "Kubernetes",
-                category: "Оркестратор контейнеров",
-                description: "Kubernetes — система оркестрации контейнеризированных приложений.",
+                category: "Оркестрация контейнеров",
+                description: "Система для автоматизации развертывания и масштабирования контейнеров. Pods, services, deployments.",
                 link: "https://kubernetes.io/docs/home/",
-                categories: ["devops"]
+                practice: "https://kubernetes.io/docs/tutorials/",
+                categories: ["devops"],
+                resources: [
+                    "Kubernetes Docs",
+                    "Kubernetes Tutorials",
+                    "Kubernetes the Hard Way"
+                ]
             },
             {
-                name: "Ansible",
-                category: "Инструмент автоматизации",
-                description: "Ansible — платформа для автоматизации IT-процессов и управления конфигурациями.",
-                link: "https://docs.ansible.com/",
-                categories: ["devops"]
+                name: "Git",
+                category: "Контроль версий",
+                description: "Распределенная система контроля версий. Ветвление, слияние, история изменений.",
+                link: "https://git-scm.com/doc",
+                practice: "https://learngitbranching.js.org/",
+                categories: ["practice", "system"],
+                resources: [
+                    "Pro Git Book",
+                    "Git Documentation",
+                    "Atlassian Git Tutorials"
+                ]
+            },
+
+            // Образовательные платформы
+            {
+                name: "FreeCodeCamp",
+                category: "Интерактивное обучение",
+                description: "Бесплатные курсы по программированию с практическими проектами. Сертификаты, сообщество.",
+                link: "https://www.freecodecamp.org/learn",
+                practice: "https://www.freecodecamp.org/learn",
+                categories: ["education", "web"],
+                resources: [
+                    "Web Development Curriculum",
+                    "Data Science Curriculum",
+                    "JavaScript Algorithms"
+                ]
             },
             {
-                name: "Terraform",
-                category: "Инфраструктура как код",
-                description: "Terraform — инструмент для безопасного построения, изменения и управления инфраструктурой.",
-                link: "https://developer.hashicorp.com/terraform/docs",
-                categories: ["devops"]
+                name: "LeetCode",
+                category: "Подготовка к собеседованиям",
+                description: "Платформа для решения алгоритмических задач. Подготовка к техническим интервью, конкурсы.",
+                link: "https://leetcode.com",
+                practice: "https://leetcode.com/problemset/",
+                categories: ["education", "practice"],
+                resources: [
+                    "Algorithm Problems",
+                    "Interview Questions",
+                    "Weekly Contests"
+                ]
             },
             {
-                name: "ASP.NET",
-                category: "Веб-фреймворк от Microsoft",
-                description: "ASP.NET — фреймворк для построения веб-приложений и сервисов на платформе .NET.",
-                link: "https://metanit.com/sharp/aspnet5/",
-                categories: ["web"]
+                name: "Exercism",
+                category: "Практика языков",
+                description: "Интерактивная платформа для изучения языков программирования. Менторство, тесты.",
+                link: "https://exercism.org/",
+                practice: "https://exercism.org/tracks",
+                categories: ["education", "practice"],
+                resources: [
+                    "50+ Language Tracks",
+                    "Mentor Guidance",
+                    "Test-Driven Learning"
+                ]
+            },
+
+            // Практические инструменты
+            {
+                name: "VS Code",
+                category: "Редактор кода",
+                description: "Мощный редактор с богатой экосистемой расширений. Debugging, Git integration, терминал.",
+                link: "https://code.visualstudio.com/docs",
+                practice: "https://code.visualstudio.com/docs/introvideos/basics",
+                categories: ["practice", "system"],
+                resources: [
+                    "VS Code Documentation",
+                    "Keybindings Reference",
+                    "Extension Marketplace"
+                ]
             },
             {
-                name: "Entity Framework",
-                category: "ORM для .NET",
-                description: "Entity Framework — объектно-реляционный преобразователь для платформы .NET.",
-                link: "https://metanit.com/sharp/entityframeworkcore/",
-                categories: ["database"]
+                name: "GitHub",
+                category: "Хостинг кода",
+                description: "Платформа для совместной разработки. Pull requests, issues, actions, pages.",
+                link: "https://docs.github.com",
+                practice: "https://docs.github.com/en/get-started",
+                categories: ["practice", "web"],
+                resources: [
+                    "GitHub Docs",
+                    "GitHub Skills",
+                    "GitHub Actions"
+                ]
+            },
+
+            // Дополнительные языки и технологии
+            {
+                name: "TypeScript",
+                category: "Типизированный JavaScript",
+                description: "Надмножество JavaScript со статической типизацией. Лучшая поддержка IDE, масштабируемость.",
+                link: "https://www.typescriptlang.org/docs/",
+                practice: "https://www.typescriptlang.org/play",
+                categories: ["web"],
+                resources: [
+                    "TypeScript Handbook",
+                    "TypeScript Deep Dive",
+                    "Effective TypeScript"
+                ]
             },
             {
-                name: "WPF",
-                category: "Платформа для desktop приложений",
-                description: "WPF — платформа для построения графических интерфейсов desktop приложений на .NET.",
-                link: "https://metanit.com/sharp/wpf/",
-                categories: ["system"]
+                name: "Go",
+                category: "Системный язык",
+                description: "Простой и эффективный язык от Google. Горутины, сборка мусора, статическая линковка.",
+                link: "https://golang.org/doc/",
+                practice: "https://golang.org/doc/code",
+                categories: ["system", "web", "devops"],
+                resources: [
+                    "A Tour of Go",
+                    "Go by Example",
+                    "The Go Programming Language"
+                ]
             },
             {
-                name: "Blazor",
-                category: "Веб-фреймворк на C#",
-                description: "Blazor — фреймворк для построения интерактивных веб-UI с использованием C# вместо JavaScript.",
-                link: "https://metanit.com/sharp/blazor/",
-                categories: ["web"]
+                name: "Rust",
+                category: "Безопасный системный язык",
+                description: "Язык с гарантиями безопасности памяти. Нулевая стоимость абстракций, владение, заимствование.",
+                link: "https://doc.rust-lang.org/stable/",
+                practice: "https://doc.rust-lang.org/rust-by-example/",
+                categories: ["system", "web"],
+                resources: [
+                    "The Rust Book",
+                    "Rust by Example",
+                    "Rustlings Exercises"
+                ]
             },
             {
-                name: "Raspberry Pi",
-                category: "Платформа для IoT",
-                description: "Raspberry Pi — одноплатный компьютер для обучения программированию и IoT проектов.",
-                link: "https://www.raspberrypi.com/documentation/",
-                categories: ["iot", "embedded"]
+                name: "Kotlin",
+                category: "Современный Java",
+                description: "Официальный язык для Android. Null safety, корутины, полная совместимость с Java.",
+                link: "https://kotlinlang.org/docs/home.html",
+                practice: "https://play.kotlinlang.org/koans",
+                categories: ["mobile", "web"],
+                resources: [
+                    "Kotlin Docs",
+                    "Kotlin Koans",
+                    "Kotlin for Java Developers"
+                ]
             },
             {
-                name: "ESP32",
-                category: "Микроконтроллер для IoT",
-                description: "ESP32 — популярный микроконтроллер с Wi-Fi и Bluetooth для IoT устройств.",
-                link: "https://docs.espressif.com/projects/esp-idf/en/latest/esp32/",
-                categories: ["iot", "embedded"]
-            },
-            {
-                name: "Arduino",
-                category: "Платформа для электронных проектов",
-                description: "Arduino — открытая платформа для создания электронных устройств и IoT проектов.",
-                link: "https://progoschool.ru/electronics-for-beginners/arduino-programing-base/",
-                categories: ["iot", "embedded"]
-            },
-            {
-                name: "MATLAB",
-                category: "Платформа для вычислений",
-                description: "MATLAB — платформа для математических вычислений, анализа данных и визуализации.",
-                link: "https://www.mathworks.com/help/matlab/index.html",
-                categories: ["data", "ai"]
+                name: "Swift",
+                category: "Язык Apple",
+                description: "Современный язык для iOS, macOS, watchOS. Безопасность, производительность, выразительность.",
+                link: "https://docs.swift.org/swift-book/",
+                practice: "https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html",
+                categories: ["mobile", "system"],
+                resources: [
+                    "Swift Book",
+                    "Swift Playgrounds",
+                    "Hacking with Swift"
+                ]
             }
         ];
 
@@ -1358,6 +1009,26 @@
                     `<span class="category-tag">${getCategoryName(cat)}</span>`
                 ).join('');
                 
+                // Создаем блок с ресурсами
+                const resourcesHtml = lang.resources ? `
+                    <div class="resources">
+                        <h4>📖 Ресурсы для изучения</h4>
+                        <ul>
+                            ${lang.resources.map(resource => `<li>• ${resource}</li>`).join('')}
+                        </ul>
+                    </div>
+                ` : '';
+                
+                // Создаем кнопки
+                const buttonsHtml = lang.practice ? `
+                    <div class="btn-container">
+                        <a href="${lang.link}" class="btn" target="_blank">Документация</a>
+                        <a href="${lang.practice}" class="btn btn-practice" target="_blank">Практика</a>
+                    </div>
+                ` : `
+                    <a href="${lang.link}" class="btn" target="_blank">Документация</a>
+                `;
+                
                 card.innerHTML = `
                     <div class="card-header">
                         <h3>${lang.name}</h3>
@@ -1366,7 +1037,8 @@
                     </div>
                     <div class="card-body">
                         <p>${lang.description}</p>
-                        <a href="${lang.link}" class="btn" target="_blank">Открыть документацию</a>
+                        ${resourcesHtml}
+                        ${buttonsHtml}
                     </div>
                 `;
                 
@@ -1385,12 +1057,13 @@
                 'system': 'Системные',
                 'data': 'Данные',
                 'database': 'Базы данных',
-                'embedded': 'Встроенные',
                 'devops': 'DevOps',
                 'ai': 'AI/ML',
-                'functional': 'Функциональные',
-                'scripting': 'Скриптовые',
-                'iot': 'IoT'
+                'low-level': 'Низкоуровневые',
+                'framework': 'Фреймворки',
+                'education': 'Обучение',
+                'practice': 'Практика',
+                'engine': 'Движки'
             };
             return categoryNames[category] || category;
         }
@@ -1476,4 +1149,4 @@
         });
     </script>
 </body>
-</html>
+                                                                          </html>
